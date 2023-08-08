@@ -9,28 +9,26 @@ import Instagram from "../../assets/img/instagram.svg";
 import Linkedin from "../../assets/img/linkedin.svg";
 
 function mostrarMenu() {
-
+    let menu = document.getElementById("menu_links") as HTMLCanvasElement;; // Obtém o elemento do menu pelo ID
+    let sombra = document.getElementById("sombra") as HTMLCanvasElement;; // Obtém o elemento da sombra pelo ID
+    let menu_barras = document.getElementById("menu_barras") as HTMLCanvasElement;; // Obtém o elemento do botão do menu pelo ID
+     
+    let body = document.getElementsByTagName("body")[0]; // Obtém o elemento body (primeiro elemento)
+    if (window.getComputedStyle(menu).left != "10px") { // Verifica se a propriedade 'left' do estilo computado do elemento do menu é diferente de 10px
+        menu.style.left = "10px"; // Define a posição 'left' do menu como 10px movendo ele para direita
+        sombra.style.right = "-10vw"; // Move a sombra para a direita
+        menu_barras.setAttribute("aria-expanded", "true"); // Atualiza o atributo 'aria-expanded' para 'true'
+        menu_barras.setAttribute("aria-label", "fechar menu"); // Atualiza o atributo 'aria-label' para 'fechar menu'
+        body.style.overflow = "hidden"; // Define o overflow do body como "hidden" para evitar a rolagem da página
+    } else {
+        menu.style.left = "-300px";
+        sombra.style.right = "110vw";
+        menu_barras.setAttribute("aria-expanded", "false");
+        menu_barras.setAttribute("aria-label", "abrir menu");
+        body.style.overflow = "auto";
+    }
+    menu_barras.classList.toggle("ativo");
 }
-/*let menu: string = document.getElementById("menu_links"); // Obtém o elemento do menu pelo ID
-let sombra = document.getElementById("sombra"); // Obtém o elemento da sombra pelo ID
-let menu_barras = document.getElementById("menu_barras"); // Obtém o elemento do botão do menu pelo ID
- 
-let body = document.getElementsByTagName("body")[0]; // Obtém o elemento body (primeiro elemento)
-if (window.getComputedStyle(menu).left != "10px") { // Verifica se a propriedade 'left' do estilo computado do elemento do menu é diferente de 10px
-    menu.style.left = "10px"; // Define a posição 'left' do menu como 10px movendo ele para direita
-    sombra.style.right = "-10vw"; // Move a sombra para a direita
-    menu_barras.setAttribute("aria-expanded", "true"); // Atualiza o atributo 'aria-expanded' para 'true'
-    menu_barras.setAttribute("aria-label", "fechar menu"); // Atualiza o atributo 'aria-label' para 'fechar menu'
-    body.style.overflow = "hidden"; // Define o overflow do body como "hidden" para evitar a rolagem da página
-} else {
-    menu.style.left = "-300px";
-    sombra.style.right = "110vw";
-    menu_barras.setAttribute("aria-expanded", "false");
-    menu_barras.setAttribute("aria-label", "abrir menu");
-    body.style.overflow = "auto";
-}
-menu_barras.classList.toggle("ativo");
-} */
 
 function Home() {
 
