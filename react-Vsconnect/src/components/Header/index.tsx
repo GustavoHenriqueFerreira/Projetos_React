@@ -3,9 +3,9 @@ import "./style.css"
 import Logo from "../../assets/img/logo.svg";
 
 function mostrarMenu() {
-    let menu = document.getElementById("menu_links") as HTMLCanvasElement;; // Obtém o elemento do menu pelo ID
-    let sombra = document.getElementById("sombra") as HTMLCanvasElement;; // Obtém o elemento da sombra pelo ID
-    let menu_barras = document.getElementById("menu_barras") as HTMLCanvasElement;; // Obtém o elemento do botão do menu pelo ID
+    let menu = document.getElementById("menu_links") as HTMLCanvasElement; // Obtém o elemento do menu pelo ID
+    let sombra = document.getElementById("sombra") as HTMLCanvasElement; // Obtém o elemento da sombra pelo ID
+    let menu_barras = document.getElementById("menu_barras") as HTMLCanvasElement; // Obtém o elemento do botão do menu pelo ID
      
     let body = document.getElementsByTagName("body")[0]; // Obtém o elemento body (primeiro elemento)
     if (window.getComputedStyle(menu).left != "10px") { // Verifica se a propriedade 'left' do estilo computado do elemento do menu é diferente de 10px
