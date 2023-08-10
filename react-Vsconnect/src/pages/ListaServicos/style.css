@@ -205,7 +205,7 @@ header nav a {
     color: var(--branco);
 }
 
-h1 {
+.titulo {
     font-family: var(--font1);
     font-size: 50px;
     text-align: center;

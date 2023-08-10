@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./style.css"
 import Logo from "../../assets/img/logo.svg";
 
@@ -32,8 +33,8 @@ function Header() {
                     <img className="header_logo" src={Logo} alt="" />
                     <nav>
                         <div id="menu_links" className="menu_links">
-                            <a href="../Home/index.html">home</a>
-                            <a href="#">serviços</a>
+                        <Link to={'/'}><a href="../Home/index.html">home</a></Link>
+                        <Link to={'/listaServicos'}><a href="#">serviços</a></Link>
                             <a href="../CadastroDev/index.html">cadastro</a>
                         </div>
                         <a className="header_icone_login" href="../Login/index.html">

@@ -10,7 +10,7 @@ function ListaServicos() {
             <main className="main_lista_servicos">
                 <div className="container container_lista_servicos">
                     <div className="lista_servicos_conteudo">
-                        <h1>Lista de Serviços</h1>
+                        <h1 className="titulo">Lista de Serviços</h1>
                         <hr/>
                             <form method="post">
                                 <div className="wrapper_form">

@@ -4,6 +4,7 @@ import Dev from "../../assets/img/dev.png";
 import Facebook from "../../assets/img/facebook.svg";
 import Instagram from "../../assets/img/instagram.svg";
 import Linkedin from "../../assets/img/linkedin.svg";
+import { Link } from "react-router-dom";
 
 function Footer() {
     return (
@@ -22,8 +23,8 @@ function Footer() {
                             <h2>Páginas</h2>
                             <ul>
                                 <li>Login</li>
-                                <li>Home</li>
-                                <li>Listar Serviços</li>
+                                <li><Link to={'/'}>Home</Link></li>
+                                <li><Link to={'/listaServicos'}>Listar Serviços</Link></li>
                                 <li>Cadastrar Cliente</li>
                                 <li>Cadastrar Desenvolvedor</li>
                             </ul>

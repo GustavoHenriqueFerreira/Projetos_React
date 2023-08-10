@@ -4,6 +4,7 @@ import Footer from "../../components/Footer";
 import Cliente from "../../assets/img/clientes.png";
 import MaosDev from "../../assets/img/maos_dev.png";
 import Alfinete from "../../assets/img/alfinete.png";
+import { Link } from "react-router-dom";
 
 function Home() {
     return (
@@ -11,7 +12,7 @@ function Home() {
             <div id="sombra"></div>
             <Header/>
             <main id="main">
-                <h1>página inicial VSconnect</h1>
+                <h1 className="titulo_home">página inicial VSconnect</h1>
                 <section className="banner">
                     <div className="banner_conteudo">
                         <span className="banner_slogan_l1">VSConnect</span>
@@ -74,7 +75,7 @@ function Home() {
                             <p>Proposta: R$750,00</p>
                         </div>
                     </div>
-                    <a href="#">Ver mais serviços</a>
+                    <Link to={'/listaServicos'}><a href="#">Ver mais serviços</a></Link>
                 </section>
             </main>
             <Footer/>
