@@ -1,12 +1,9 @@
 import "./style.css"
-import Header from "../../components/Header/index.tsx";
-import Footer from "../../components/Footer/index.tsx";
+import Footer from "../../components/Footer"
 
 function ListaServicos() {
     return (
         <>
-            <div id="sombra"></div>
-            <Header/>
             <main className="main_lista_servicos">
                 <div className="container container_lista_servicos">
                     <div className="lista_servicos_conteudo">
