@@ -1,27 +1,20 @@
 import "./style.css";
 
-interface CardDevProps {
-    foto: string;
-    nome: string;
-    email: string;
-    techs: string[];
-}
-
-function CardDev({ foto, nome, email, techs }: CardDevProps) {
+function CardDev(props: any) {
     return (
         <ul>
             <li>
                 <div className="dev">
                     <div className="grupo_contato">
-                        <img src={foto} alt="" />
+                        <img src={props.foto} alt="" />
                         <div className="contato_dev">
-                            <h3>{nome}</h3>
-                            <p>{email}</p>
+                            <h3>{props.nome}</h3>
+                            <p>{props.email}</p>
                         </div>
                     </div>
                     <div className="techs">
-                        {techs.map((techs, index) => (
-                            <span key={index}>{techs}</span>
+                        {props.techs.map((tech: string, index: number) => (
+                            <span key={index}>{tech}</span>
                         ))}
                     </div>
                 </div>
