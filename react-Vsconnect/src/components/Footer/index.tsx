@@ -18,6 +18,7 @@ function Footer() {
                             <li><Link to={'/lista/servicos'}>Listar Serviços</Link></li>
                             <li><Link to={'/cadastro/usuario'}>Cadastrar Cliente</Link></li>
                             <li><Link to={'/cadastro/usuario'}>Cadastrar Desenvolvedor</Link></li>
+                            <li><Link to={'/lista/devs'}>Lista de Devs</Link></li>
                         </ul>
                     </div>
                     <img src={Logo} alt="" />

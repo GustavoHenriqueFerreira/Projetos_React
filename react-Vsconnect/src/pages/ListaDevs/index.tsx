@@ -11,7 +11,7 @@ interface Dev {
 }
 
 function ListaDevs() {
-    const [devs, setDevs] = useState<Dev[]>([
+    const [devs] = useState<Dev[]>([
         {
             foto: "https://github.com/Thiago-Nascimento.png",
             nome: "Thiago Nascimento",
@@ -32,12 +32,33 @@ function ListaDevs() {
         },
         {
             foto: "https://github.com/alexiamelhado18.png",
-            nome: "Aléxia Vitóri",
+            nome: "Aléxia Vitória",
             email: "alexia@email.com",
-            techs: ["HTML", "CSS", "React"],
+            techs: ["PYTHON", "VUE", "REACT"]
         }
     ]);
 
+    const [listaDevsFiltrados, setListaDevsFiltrados] = useState<any[]>(devs);
+    const [techDigitada, setTechDigitada] = useState<string>("");
+
+    function verificarCampoTech(event: any) {
+        if (event.target.value === "") {
+            setListaDevsFiltrados(devs);
+        }
+        setTechDigitada(event.target.value);
+    }
+
+    function buscarDevPorTech(event: any) {
+        event.preventDefault();
+
+        const devsFiltrados = devs.filter((dev: any) => dev.techs.includes(techDigitada.toLocaleUpperCase()));
+
+        if (devsFiltrados.length === 0) {
+            alert("Nenhum desenvolvedor(a) com essa skill :(")
+        } else {
+            setListaDevsFiltrados(devsFiltrados);
+        }
+    }
 
     return (
         <>
@@ -46,17 +67,17 @@ function ListaDevs() {
                 <div className="lista_devs_conteudo">
                     <h1>Lista de Devs</h1>
                     <hr />
-                    <form method="post">
+                    <form method="post" onSubmit={buscarDevPorTech}>
                         <div className="wrapper_form">
                             <label htmlFor="busca">Procurar desenvolvedores</label>
                             <div className="campo-label">
-                                <input type="search" name="campo-busca" id="busca" placeholder="Buscar desenvolvedores por tecnologias..." />
+                                <input onChange={verificarCampoTech} type="search" name="campo-busca" id="busca" placeholder="Buscar desenvolvedores por tecnologias..." />
                                 <button type="submit">Buscar</button>
                             </div>
                         </div>
                     </form>
                     <div className="wrapper_lista">
-                        {devs.map((dev, index) => (
+                        {listaDevsFiltrados.map((dev, index) => (
                             <CardDev
                                 key={index}
                                 foto={dev.foto}
