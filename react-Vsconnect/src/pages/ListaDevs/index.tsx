@@ -11,7 +11,7 @@ function ListaDevs() {
 
     function verificarCampoTech(event: any) {
         if (event.target.value === "") {
-            setDevs(devs);
+            listarDesenvolvedores();
         }
         setTechDigitada(event.target.value);
     }
